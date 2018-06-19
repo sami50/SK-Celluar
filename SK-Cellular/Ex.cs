@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SK_Cellular
 {
-    public partial class Form1 : Form
+    public partial class Ex : Form
     {
-        public Form1()
+        public Ex()
         {
             InitializeComponent();
+        }
+
+        private void Ex_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
