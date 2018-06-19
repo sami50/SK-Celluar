@@ -28,22 +28,22 @@ namespace SK_Cellular
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B76CUCU\SAMEESQL;Initial Catalog=stock;Integrated Security=True");
-            //SqlDataAdapter adapter = new SqlDataAdapter(@"select * from login s 
-            //    where s.username='" + textBox1.Text + "'and s.password = '" + textBox2.Text + "'", conn);
-            //DataTable dt = new DataTable();
-            //adapter.Fill(dt);
-            //if (dt.Rows.Count == 1)
-            //{
-            //    Dashboard sdash = new Dashboard();
-            //    sdash.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid UserName and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    this.Show();
-               
-            //}
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B76CUCU\SAMEESQL;Initial Catalog=stock;Integrated Security=True");
+            SqlDataAdapter adapter = new SqlDataAdapter(@"select * from login s 
+                where s.username='" + textBox1.Text + "'and s.password = '" + textBox2.Text + "'", conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                Dashboard sdash = new Dashboard();
+                sdash.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid UserName and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Show();
+
+            }
         }
     }
 }
