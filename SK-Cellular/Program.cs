@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using SK_Cellular.Items;
 namespace SK_Cellular
 {
     static class Program
@@ -16,7 +16,7 @@ namespace SK_Cellular
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Add_Item());
         }
     }
 }

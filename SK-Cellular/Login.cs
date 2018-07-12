@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Configuration;
+using SK_Cellular.DB;
 namespace SK_Cellular
 {
     public partial class Login : Form
@@ -28,9 +29,12 @@ namespace SK_Cellular
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B76CUCU\SAMEESQL;Initial Catalog=stock;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B76CUCU\SAMEESQL;Initial Catalog=stock;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["mainDB"].ConnectionString);
+
+
             SqlDataAdapter adapter = new SqlDataAdapter(@"select * from login s 
-                where s.username='" + textBox1.Text + "'and s.password = '" + textBox2.Text + "'", conn);
+                where s.username='" + textBox1.Text + "'and s.password = '" + textBox2.Text + "'", connectDB.getConnection());
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             if (dt.Rows.Count == 1)
